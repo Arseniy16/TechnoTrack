@@ -43,7 +43,6 @@ int SolveLinear (const double b, const double c, double * x)
     /* verification on true pointers  */
 	assert(x != NULL);
 
-
     if (isZero(b))
     {
         return (isZero(c)) ? UNDEF : NO_ROOTS;
@@ -111,7 +110,7 @@ int SolveSquare (const double a, const double b, const double c, double* x1, dou
 int isZero (const double a)
 {
 	assert(isfinite(a));
-	
+
     return (fabs (a) < MISTAKE);
 }
 
