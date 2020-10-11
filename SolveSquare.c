@@ -13,7 +13,7 @@ void InputData (double * ptr_a, double * ptr_b, double * ptr_c)
     assert(ptr_a != NULL);
     assert(ptr_b != NULL);
     assert(ptr_c != NULL); 
-	assert(ptr_a != ptr_b);
+    assert(ptr_a != ptr_b);
     assert(ptr_a != ptr_c);
     assert(ptr_b != ptr_c);
     
