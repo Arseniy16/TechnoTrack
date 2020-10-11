@@ -9,7 +9,14 @@
 
 void InputData (double * ptr_a, double * ptr_b, double * ptr_c)
 {
-
+	/* verification on true pointers  */
+	assert(ptr_a != NULL);
+	assert(ptr_b != NULL);
+	assert(ptr_c != NULL);
+	assert(ptr_a != ptr_b);
+	assert(ptr_a != ptr_c);
+	assert(ptr_b != ptr_c);
+    
     int counts = scanf ("%lg %lg %lg", ptr_a, ptr_b, ptr_c);
     
     int x = 0;
@@ -29,6 +36,14 @@ void InputData (double * ptr_a, double * ptr_b, double * ptr_c)
 
 int SolveLinear (const double b, const double c, double * x)
 {
+    /* verification on finite coefs */
+    assert(isfinite(b));
+    assert(isfinite(c));
+
+    /* verification on true pointers  */
+	assert(x != NULL);
+
+
     if (isZero(b))
     {
         return (isZero(c)) ? UNDEF : NO_ROOTS;
@@ -95,6 +110,8 @@ int SolveSquare (const double a, const double b, const double c, double* x1, dou
 
 int isZero (const double a)
 {
+	assert(isfinite(a));
+	
     return (fabs (a) < MISTAKE);
 }
 
